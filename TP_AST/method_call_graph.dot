@@ -1,0 +1,15 @@
+digraph MethodCallGraph {
+  rankdir=LR;
+  node [shape=box, style=filled];
+  "com.model.CarModel.CarModel" [label="CarModel.CarModel", fillcolor="lightgreen"];
+  "[unresolved].println" [label="[unresolved].println", fillcolor="lightgrey"];
+  "com.model.CarModel.getModelCode" [label="CarModel.getModelCode", fillcolor="lightgreen"];
+  "com.factory.Manufacturing.logProduction" [label="Manufacturing.logProduction", fillcolor="lightblue"];
+  "com.model.CarModel.calculateTax" [label="CarModel.calculateTax", fillcolor="lightgreen"];
+  "com.factory.CarFactory.designNewModel" [label="CarFactory.designNewModel", fillcolor="lightblue"];
+  "com.factory.Manufacturing.designNewModel" [label="Manufacturing.designNewModel", fillcolor="lightblue"];
+  "com.factory.CarFactory.logModel" [label="CarFactory.logModel", fillcolor="lightblue"];
+  "com.factory.CarFactory.designNewModel" -> "com.factory.CarFactory.logModel";
+  "com.factory.CarFactory.designNewModel" -> "com.factory.Manufacturing.logProduction";
+  "com.factory.CarFactory.logModel" -> "com.model.CarModel.getModelCode";
+}
